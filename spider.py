@@ -41,10 +41,12 @@ session.post(url=login_url, data=data)
 problems = session.get(url=problems_url).json()
 for problem in problems["data"]:
     if problem["my_status"] == 0:
-        submissions = session.get(submission_url, params={**submission_params, "problem_id": problem["_id"]}).json()
+        submissions = session.get(submission_url, params={
+                                  **submission_params, "problem_id": problem["_id"]}).json()
         for submission in submissions["data"]["results"]:
             if submission["result"] == 0:
-                subcode = session.get(code_url, params={"id": submission["id"]}).json()["data"]
+                subcode = session.get(
+                    code_url, params={"id": submission["id"]}).json()["data"]
                 with open("src/" + subcode["problem"] + language_suffix[subcode["language"]], "w") as f:
                     f.write(subcode["code"])
                 break
