@@ -9,7 +9,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"}
 data = {
     "username": "",  # 填写用户名
-    "password": ""  # 填写密码
+    "password": ""  # 填写密码a
 }
 init_url = "http://10.216.217.131:9999/api/profile"
 login_url = "http://10.216.217.131:9999/api/login"
